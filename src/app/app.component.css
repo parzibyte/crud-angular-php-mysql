@@ -1,0 +1,12 @@
+.contenedor-padre{
+    display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+
+.barra{
+    flex: 0 1 auto;
+}
+.contenido{
+    flex: 1 1 auto;
+}
