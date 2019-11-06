@@ -22,14 +22,19 @@ export class ListarMascotasComponent implements OnInit {
       })
       .afterClosed()
       .subscribe((confirmado: Boolean) => {
-        if (confirmado) {
-          console.log("Confirmado");
-        }
+        if (!confirmado) return;
+        this.mascotasService
+          .deleteMascota(mascota)
+          .subscribe(() => this.obtenerMascotas());
       })
   }
 
   ngOnInit() {
-    this.mascotasService
+    this.obtenerMascotas();
+  }
+
+  obtenerMascotas() {
+    return this.mascotasService
       .getMascotas()
       .subscribe((mascotas: Mascota[]) => this.mascotas = mascotas);
   }

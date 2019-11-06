@@ -15,6 +15,9 @@ export class MascotasService {
 
   addMascota(mascota: Mascota) {
     return this.http.post(`${this.baseUrl}/post.php`, mascota);
+  }
 
+  deleteMascota(mascota: Mascota) {
+    return this.http.delete(`${this.baseUrl}/delete.php?idMascota=${mascota.id}`);
   }
 }
