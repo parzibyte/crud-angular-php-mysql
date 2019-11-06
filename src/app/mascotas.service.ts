@@ -10,7 +10,10 @@ export class MascotasService {
   constructor(private http: HttpClient) { }
 
   getMascotas() {
-    return this.http.get(`${this.baseUrl}/get.php`);
+    return this.http.get(`${this.baseUrl}/getAll.php`);
+  }
+  getMascota(id: string | number) {
+    return this.http.get(`${this.baseUrl}/get.php?idMascota=${id}`);
   }
 
   addMascota(mascota: Mascota) {
