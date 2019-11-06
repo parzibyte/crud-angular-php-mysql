@@ -1,1 +1,21 @@
-<p>listar-mascotas works!</p>
+<h2>Listado de mascotas</h2>
+<table mat-table [dataSource]="mascotas" class="mat-elevation-z8" style="width:
+    100%;">
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef>Nombre</th>
+        <td mat-cell *matCellDef="let mascota"> {{mascota.nombre}} </td>
+    </ng-container>
+    <ng-container matColumnDef="raza">
+        <th mat-header-cell *matHeaderCellDef>Raza</th>
+        <td mat-cell *matCellDef="let mascota"> {{mascota.raza}} </td>
+    </ng-container>
+    <ng-container matColumnDef="edad">
+        <th mat-header-cell *matHeaderCellDef>Edad</th>
+        <td mat-cell *matCellDef="let mascota"> {{mascota.edad}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="['nombre', 'raza', 'edad']"></tr>
+    <tr mat-row *matRowDef="let fila; columns: ['nombre', 'raza', 'edad'];"></tr>
+</table>
