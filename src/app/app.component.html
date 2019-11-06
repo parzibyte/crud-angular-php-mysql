@@ -1,63 +1,50 @@
 <div class="contenedor-padre">
   <mat-toolbar class="barra" color="warn">
     <mat-toolbar-row>
-      <button mat-icon-button>
+      <button (click)="cajon.toggle()" mat-icon-button>
         <mat-icon>menu</mat-icon>
       </button>
       <span>
-        CRUD Angular con PHP y MySQL
+        CRUD Angular con PHP y MySQL&nbsp;
+      </span>
+      <span>
+        <a mat-stroked-button href="https://parzibyte.me/blog">By Parzibyte</a>
       </span>
     </mat-toolbar-row>
   </mat-toolbar>
   <mat-sidenav-container class="contenido">
-    <mat-sidenav mode="side" opened>
+    <mat-sidenav style="min-width: 300px;" #cajon mode="side" opened>
       <mat-nav-list>
-        <a mat-list-item href='#'>Agregar mascota</a>
-        <a mat-list-item href='#'>Ver mascotas</a>
-        <a mat-list-item href='#'>Acerca de</a>
+        <a mat-list-item routerLink="/mascotas/agregar">
+          <mat-icon color="accent">add</mat-icon>
+          Agregar mascota
+        </a>
+        <a mat-list-item routerLink="/mascotas">
+          <mat-icon color="primary">pets</mat-icon>
+          Ver mascotas
+        </a>
       </mat-nav-list>
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Más
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+
+          <mat-nav-list>
+            <a mat-list-item href='#'>
+              Acerca de
+            </a>
+            <a mat-list-item href='#'>
+              Ayuda
+            </a>
+          </mat-nav-list>
+        </mat-expansion-panel>
+      </mat-accordion>
     </mat-sidenav>
-    <mat-sidenav-content>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quam vero
-        tempore architecto laborum. Et labore consequatur necessitatibus, dicta
-        vitae perferendis itaque veritatis explicabo! Id sapiente perferendis
-        iusto omnis provident?</p>
-      <p>Cumque assumenda error vitae consequatur numquam tenetur molestias
-        impedit est quaerat molestiae! Officia, expedita laborum unde quasi eius
-        nemo nulla molestiae enim accusantium minima error soluta eaque numquam
-        nihil quibusdam?</p>
-      <p>Dolores deleniti rerum illo optio, voluptatibus pariatur molestiae, at
-        earum amet, maxime porro totam! Numquam magni eius, autem voluptatum
-        optio consectetur quisquam magnam saepe officia ipsa consequuntur, quis
-        quam cum.</p>
-      <p>Suscipit animi fugit in cumque ipsum nesciunt ullam vitae aliquid
-        recusandae omnis quam unde consequuntur, maiores totam. Quas, molestiae
-        consequuntur, suscipit nisi atque doloribus, eligendi ipsam explicabo
-        eius culpa totam?</p>
-      <p>Vitae amet dolores consequatur eligendi blanditiis molestias delectus
-        fugiat eum ipsa vel distinctio, perspiciatis illo dolorum, maiores non
-        ratione? Quos soluta sed laboriosam corporis ab ducimus inventore,
-        libero dignissimos fuga.</p>
-      <p>Facere fugiat dolore, numquam optio fuga hic, accusantium sapiente
-        porro dolor laboriosam maiores aut fugit velit ab vel dolorum esse
-        libero. Consequatur libero suscipit sunt placeat. Consequuntur, hic.
-        Hic, mollitia.</p>
-      <p>Quod et fugit voluptates voluptas dolores nobis cum ipsam temporibus
-        non, dolorem quidem voluptatibus, ut pariatur, totam officiis incidunt
-        deleniti repellendus debitis sit velit! Voluptates, vitae perferendis.
-        Dolor, amet ipsam.</p>
-      <p>Necessitatibus quaerat quas aliquam maxime quos enim ad perspiciatis
-        eaque incidunt unde. Deleniti voluptatum quidem neque quos consequatur
-        veniam, alias sit voluptatem, libero nulla, debitis minima rem qui?
-        Vitae, adipisci.</p>
-      <p>Vitae doloribus aperiam perferendis corrupti sit, recusandae enim
-        veniam consequatur voluptas dolorum porro ducimus mollitia provident,
-        illum inventore asperiores aspernatur voluptatum tempore, dolor magni
-        consequuntur assumenda beatae error! Nulla, repellendus.</p>
-      <p>Omnis, quod maxime! Beatae dignissimos ea tempora repellat vel, aliquam
-        minima error enim non in? Soluta quo, labore veritatis mollitia
-        exercitationem laboriosam doloribus corrupti. Totam, voluptatum. Et
-        corrupti suscipit dignissimos.</p>
+    <mat-sidenav-content class="padding-10">
+      <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>
