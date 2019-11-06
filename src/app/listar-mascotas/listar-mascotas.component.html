@@ -26,7 +26,7 @@
     <ng-container matColumnDef="eliminar">
         <th mat-header-cell *matHeaderCellDef>Eliminar</th>
         <td mat-cell *matCellDef="let mascota">
-            <button mat-icon-button>
+            <button (click)="eliminarMascota(mascota)" mat-icon-button>
                 <mat-icon color="warn">delete</mat-icon>
             </button>
         </td>
