@@ -3,6 +3,7 @@ import { MascotasService } from "../mascotas.service"
 import { Mascota } from "../mascota"
 import { MatDialog } from '@angular/material/dialog';
 import { DialogoConfirmacionComponent } from "../dialogo-confirmacion/dialogo-confirmacion.component"
+import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-listar-mascotas',
   templateUrl: './listar-mascotas.component.html',
@@ -13,7 +14,7 @@ export class ListarMascotasComponent implements OnInit {
     new Mascota("Maggie", "Chihuahua", 20)
   ];
 
-  constructor(private mascotasService: MascotasService, private dialogo: MatDialog) { }
+  constructor(private mascotasService: MascotasService, private dialogo: MatDialog, private snackBar: MatSnackBar) { }
 
   eliminarMascota(mascota: Mascota) {
     this.dialogo
@@ -25,7 +26,12 @@ export class ListarMascotasComponent implements OnInit {
         if (!confirmado) return;
         this.mascotasService
           .deleteMascota(mascota)
-          .subscribe(() => this.obtenerMascotas());
+          .subscribe(() => {
+            this.obtenerMascotas();
+            this.snackBar.open('Mascota eliminada', undefined, {
+              duration: 1500,
+            });
+          });
       })
   }
 

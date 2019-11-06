@@ -19,12 +19,15 @@ import { MatTableModule } from '@angular/material/table';
 import { HttpClientModule } from '@angular/common/http';
 import { DialogoConfirmacionComponent } from './dialogo-confirmacion/dialogo-confirmacion.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { EditarMascotaComponent } from './editar-mascota/editar-mascota.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 @NgModule({
   declarations: [
     AppComponent,
     AgregarMascotaComponent,
     ListarMascotasComponent,
-    DialogoConfirmacionComponent
+    DialogoConfirmacionComponent,
+    EditarMascotaComponent
   ],
   entryComponents: [
     DialogoConfirmacionComponent,
@@ -45,6 +48,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     HttpClientModule,
     MatTableModule,
     MatDialogModule,
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
