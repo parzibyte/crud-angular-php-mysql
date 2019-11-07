@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Mascota } from '../mascota';
 import { MascotasService } from "../mascotas.service"
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
+
+
 @Component({
   selector: 'app-agregar-mascota',
   templateUrl: './agregar-mascota.component.html',
@@ -8,16 +12,21 @@ import { MascotasService } from "../mascotas.service"
 })
 export class AgregarMascotaComponent implements OnInit {
 
-  constructor(private mascotasService: MascotasService) { }
+  constructor(private mascotasService: MascotasService,
+    private snackBar: MatSnackBar,
+    private router: Router,
+  ) { }
 
   ngOnInit() {
   }
   mascotaModel = new Mascota("", "", undefined)
 
   onSubmit() {
-    console.log("Se envía el formulario: ", this.mascotaModel)
-    this.mascotasService.addMascota(this.mascotaModel).subscribe(r => {
-      console.log("Al agregar: ", r);
+    this.mascotasService.addMascota(this.mascotaModel).subscribe(() => {
+      this.snackBar.open('Mascota guardada', undefined, {
+        duration: 1500,
+      });
+      this.router.navigate(['/mascotas']);
     })
   }
 
