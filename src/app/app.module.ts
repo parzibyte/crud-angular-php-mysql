@@ -21,13 +21,15 @@ import { DialogoConfirmacionComponent } from './dialogo-confirmacion/dialogo-con
 import { MatDialogModule } from '@angular/material/dialog';
 import { EditarMascotaComponent } from './editar-mascota/editar-mascota.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { AcercaDeComponent } from './acerca-de/acerca-de.component';
 @NgModule({
   declarations: [
     AppComponent,
     AgregarMascotaComponent,
     ListarMascotasComponent,
     DialogoConfirmacionComponent,
-    EditarMascotaComponent
+    EditarMascotaComponent,
+    AcercaDeComponent
   ],
   entryComponents: [
     DialogoConfirmacionComponent,
