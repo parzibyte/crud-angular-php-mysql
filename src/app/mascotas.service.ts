@@ -12,6 +12,7 @@ export class MascotasService {
   getMascotas() {
     return this.http.get(`${this.baseUrl}/getAll.php`);
   }
+
   getMascota(id: string | number) {
     return this.http.get(`${this.baseUrl}/get.php?idMascota=${id}`);
   }
@@ -22,5 +23,9 @@ export class MascotasService {
 
   deleteMascota(mascota: Mascota) {
     return this.http.delete(`${this.baseUrl}/delete.php?idMascota=${mascota.id}`);
+  }
+
+  updateMascota(mascota: Mascota) {
+    return this.http.put(`${this.baseUrl}/update.php`, mascota);
   }
 }

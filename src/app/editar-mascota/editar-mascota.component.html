@@ -1,1 +1,29 @@
-<p>{{mascota | json}}</p>
+<h2>Editar mascota <mat-icon>pets</mat-icon></h2>
+<form (ngSubmit)="onSubmit()" #formMascota="ngForm">
+    <p>
+        <mat-form-field>
+            <input matInput name="nombre" [(ngModel)]="mascota.nombre"
+                type="text"
+                placeholder="Nombre">
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field>
+            <input matInput name="raza" [(ngModel)]="mascota.raza"
+                type="text"
+                placeholder="Raza">
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field>
+            <input matInput name="edad" [(ngModel)]="mascota.edad"
+                type="number"
+                placeholder="Edad">
+        </mat-form-field>
+    </p>
+    <p>
+        <button type="submit" mat-flat-button color="accent">Guardar</button>
+        &nbsp;
+        <button (click)="volver()" type="button" mat-flat-button color="primary">Volver</button>
+    </p>
+</form>

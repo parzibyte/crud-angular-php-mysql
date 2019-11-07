@@ -9,7 +9,7 @@ import { Mascota } from '../mascota';
 })
 export class EditarMascotaComponent implements OnInit {
 
-  private mascota: Mascota
+  private mascota: Mascota = new Mascota("", "", 0);
 
   constructor(private route: ActivatedRoute,
     private router: Router, private mascotasService: MascotasService) { }
@@ -21,6 +21,12 @@ export class EditarMascotaComponent implements OnInit {
 
   volver() {
     this.router.navigate(['/mascotas']);
+  }
+
+  onSubmit() {
+    this.mascotasService.updateMascota(this.mascota).subscribe(() => {
+      this.volver();
+    });
   }
 
 }
