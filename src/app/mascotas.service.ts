@@ -18,11 +18,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Mascota } from "./mascota"
+import { environment } from "../environments/environment"
 @Injectable({
   providedIn: 'root'
 })
 export class MascotasService {
-  baseUrl = "http://localhost/mascotas_angular"
+  baseUrl = environment.baseUrl
 
   constructor(private http: HttpClient) { }
 
