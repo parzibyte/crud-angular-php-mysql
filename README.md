@@ -1,27 +1,12 @@
-# CrudAngularPhpMysql
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.17.
+# Conexión Angular, PHP y MySQL
+![enter image description here](https://parzibyte.me/blog/wp-content/uploads/2019/11/CRUD-angular-con-PHP-y-MySQL-usando-Angular-Material.png)
+## Descripción
 
-## Development server
+Vamos a usar PHP así que es necesario configurar [CORS](https://parzibyte.me/blog/2019/11/10/configurar-cors-php/). Para la base de datos vamos a usar MySQL, si quieres puedes comenzar aprendiendo [PHP y MySQL](https://parzibyte.me/blog/2018/02/12/mysql-php-pdo-crud/).
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Después vamos a crear la app de Angular, todos los componentes son generados con la [CLI](https://parzibyte.me/blog/2019/11/03/instalar-cli-angular-windows/). Más tarde se agrega [Angular Material](https://parzibyte.me/blog/2019/11/03/agregar-angular-material-app-angular/), se crea un [servicio](https://parzibyte.me/blog/2019/11/08/servicios-angular-ejemplo/) que usa el módulo [HttpClient](https://parzibyte.me/blog/2019/11/10/angular-peticiones-http-httpclient/), un momento más tarde se configura el [router](https://parzibyte.me/blog/2019/11/04/angular-router-tutorial-ejemplo/) y en algunos componentes utilizamos [formularios](https://parzibyte.me/blog/2019/11/25/ejemplo-formulario-angular/).
+## Tutorial y demostración
+Tutorial: https://parzibyte.me/blog/2019/11/25/angular-php-mysql-crud/
+Demo: https://parzibyte.me/ejemplos/mascotas_angular/
+Descargar versión compilada: https://github.com/parzibyte/crud-angular-php-mysql/releases/download/v1.0/mascotas_angular.zip
