@@ -27,7 +27,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./listar-mascotas.component.css']
 })
 export class ListarMascotasComponent implements OnInit {
-  private mascotas: Mascota[] = [
+  public mascotas: Mascota[] = [
     new Mascota("Maggie", "Chihuahua", 20)
   ];
 
